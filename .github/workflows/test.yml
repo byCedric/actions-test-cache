@@ -19,8 +19,9 @@ jobs:
       - uses: bycedric/expo-github-action@fix/auth-windows
         with:
           expo-version: 3.x
-          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+          expo-username: bycedric
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: expo --help
+      - run: expo whoami
       - run: npm ci
       - run: expo publish
