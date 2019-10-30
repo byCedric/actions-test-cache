@@ -21,6 +21,7 @@ jobs:
           expo-version: 3.x
           expo-username: bycedric
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+          expo-packager: yarn
       - run: expo --help
       - run: expo whoami
       - run: npm ci
