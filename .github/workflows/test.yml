@@ -16,14 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - run: mkdir -p /opt/hostedtoolcache/expo-cli/3.4.1/x64
-      - uses: actions/cache@preview
-        with:
-          path: /opt/hostedtoolcache/expo-cli/3.4.1/x64
-          key: ${{ runner.os }}-expo-cli-attempt-2-3.4.1
-          restore-keys: |
-            ${{ runner.os }}-expo-cli-attempt-2-
-      - uses: expo/expo-github-action@v4
+      - uses: bycedric/expo-github-action@feat/cache
         with:
           expo-version: 3.4.1
           expo-username: bycedric
