@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      - run: mkdir -p /opt/hostedtoolcache/expo-cli/3.4.1/x64/node_modules
       - uses: actions/cache@preview
         with:
           path: /opt/hostedtoolcache/expo-cli/3.4.1/x64/node_modules
