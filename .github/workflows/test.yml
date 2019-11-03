@@ -10,15 +10,21 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      - uses: actions/cache@preview
+        with:
+          path: /opt/hostedtoolcache/expo-cli/3.4.1/x64/node_modules
+          key: ${{ runner.os }}-expo-cli-3.4.1
+          restore-keys: |
+            ${{ runner.os }}-expo-cli-
       - uses: expo/expo-github-action@v4
         with:
-          expo-version: 3.x
+          expo-version: 3.4.1
           expo-username: bycedric
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
           expo-packager: yarn
