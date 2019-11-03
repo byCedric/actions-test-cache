@@ -30,5 +30,3 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: expo --help
       - run: expo whoami
-      - run: npm ci
-      - run: expo publish
