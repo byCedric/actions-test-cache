@@ -21,5 +21,6 @@ jobs:
           expo-version: 3.4.1
           expo-username: bycedric
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+          expo-cache: true
       - run: expo --help
       - run: expo whoami
